@@ -12,6 +12,10 @@
 \addtolength{\topmargin}{-.875in}
 \addtolength{\textheight}{1.75in}
 
-\pagenumbering{gobble}
-
-
+\let\olditemize\itemize
+\renewcommand{\itemize}{
+	\olditemize
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+}
