@@ -18,14 +18,17 @@
 \newcommand*{\email}[1]{\gdef\@emall{#1}}
 \newcommand*{\github}[1]{\gdef\@github{#1}}
 
+%Thanks to Gonzalo Medina''s answer on tex stack exchange to the question:
+%http://tex.stackexchange.com/questions/32597/vertically-centered-horizontal-rule-filling-the-rest-of-a-line
+\def\Vhrulefill{\noindent\leavevmode\leaders\hrule height 0.9ex depth \dimexpr0.4pt-0.7ex\hfill\kern0pt} 
+
 \renewcommand*{\maketitle}{%
 	\newpage
-	\begin{center}%
-		{\textbf{ \LARGE \@author} \par}
-	\end{center}
+%	\begin{center}%
+%		{\textbf{ \LARGE \@author} \par}
+%	\end{center}
+		\Vhrulefill\textbf{ \LARGE\@author}\Vhrulefill \par
 	\noindent\hrulefill
-%	\noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}
-	
 }
 
 \renewcommand*{\section}[1]{
@@ -39,6 +42,7 @@
 \renewcommand*{\subsection}[1]{
 	\goodbreak
 	\par
+	\noindent
 	\flushleft{\textbf{ \large {#1}}}
 	\par
 }
