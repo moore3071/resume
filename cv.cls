@@ -3,11 +3,13 @@
 \LoadClassWithOptions{article}
 \pagestyle{empty}
 
+\renewcommand*\rmdefault{ptm}
+
 \setcounter{secnumdepth}{0}
 
-\addtolength{\oddsidemargin}{-.875in}
-\addtolength{\evensidemargin}{-.875in}
-\addtolength{\textwidth}{1.75in}
+\addtolength{\oddsidemargin}{-.9in}
+\addtolength{\evensidemargin}{-.9in}
+\addtolength{\textwidth}{1.8in}
 
 \setlength{\topmargin}{0in}
 \setlength{\voffset}{-.75in}
@@ -76,7 +78,8 @@
 }
 
 \renewcommand*{\subsection}[3]{
-	\flushleft{\textbf{ \large {#1}}}
+	\vspace{3pt}
+	\noindent{\textbf{ \large {#1}}}
 	\newline
 	\textbf{#2}\hfill\textbf{#3}
 	\newline
