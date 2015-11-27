@@ -32,7 +32,8 @@
 
 %Thanks to Gonzalo Medina''s answer on tex stack exchange to the question:
 %http://tex.stackexchange.com/questions/32597/vertically-centered-horizontal-rule-filling-the-rest-of-a-line
-\def\Vhrulefill{\noindent\leavevmode\leaders\hrule height 0.9ex depth \dimexpr0.4pt-0.7ex\hfill\kern0pt} 
+\def\Vhrulefill{\noindent\leavevmode\leaders\hrule height 0.9ex depth \dimexpr0.6pt-0.5ex\hfill\kern0pt} 
+\def\Vhrulefilltwo{\noindent\leavevmode\leaders\hrule height 1.1ex depth \dimexpr0.7pt-0.9ex\hfill\kern0pt} 
 
 \renewcommand*{\maketitle}{%
 	\newpage
@@ -62,22 +63,23 @@
 	\else
 		\Vhrulefill\textbf\@github\Vhrulefill
 	\fi
+	\newline
 }
 
 \renewcommand*{\section}[1]{
-	\goodbreak
+	\goodbreak\vspace{6pt}
 	\par
+	\nointerlineskip
 	\noindent
-	\flushleft{\textbf{ \Large \uppercase\expandafter{#1}}}
-	\par
+	\Vhrulefilltwo\textbf{ \Large \uppercase{#1}}\Vhrulefilltwo\Vhrulefilltwo\Vhrulefilltwo\Vhrulefilltwo\Vhrulefilltwo
+	\\
 }
 
-\renewcommand*{\subsection}[1]{
-	\goodbreak
-	\par
-	\noindent
+\renewcommand*{\subsection}[3]{
 	\flushleft{\textbf{ \large {#1}}}
-	\par
+	\newline
+	\textbf{#2}\hfill\textbf{#3}
+	\newline
 }
 
 \let\olditemize\itemize
