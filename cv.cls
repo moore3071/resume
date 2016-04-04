@@ -18,52 +18,50 @@
 \renewcommand*{\author}[1]{\gdef\@author{#1}}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
 \newcommand*{\phone}[1]{\gdef\@address{#1}}
-\newcommand*{\email}[1]{\gdef\@emall{#1}}
+\newcommand*{\email}[1]{\gdef\@email{#1}}
 \newcommand*{\github}[1]{\gdef\@github{#1}}
 
 \global\let\@author\@empty
-\global\let\@author\relax
 \global\let\@address\@empty
-\global\let\@address\relax
 \global\let\@phone\@empty
-\global\let\@phone\relax
 \global\let\@email\@empty
-\global\let\@email\relax
 \global\let\@github\@empty
-\global\let\@github\relax
 
 %Thanks to Gonzalo Medina''s answer on tex stack exchange to the question:
 %http://tex.stackexchange.com/questions/32597/vertically-centered-horizontal-rule-filling-the-rest-of-a-line
 \def\Vhrulefill{\noindent\leavevmode\leaders\hrule height 0.9ex depth \dimexpr0.6pt-0.5ex\hfill\kern0pt} 
 \def\Vhrulefilltwo{\noindent\leavevmode\leaders\hrule height 1.1ex depth \dimexpr0.7pt-0.9ex\hfill\kern0pt} 
 
-\renewcommand*{\maketitle}{%
+\renewcommand*{\maketitle}{
 	\newpage
-	\begin{center}%
-		{\textbf{ \LARGE \@author} \par}
+	\begin{center}
+		{\textbf{ \LARGE \@author}}
 	\end{center}
-%		\Vhrulefill\textbf{ \LARGE\@author}\Vhrulefill \par
-	\hfill
+	\dotfill
 	\ifx\@address\@empty
 %		\relax
 	\else
-		\textbf\@address\hfill
+		\textbf\@address
+		\dotfill
 	\fi
 	\ifx\@phone\@empty
 %		\relax
 	\else
-		\textbf\@phone\hfill
+		\textbf\@phone
+		\dotfill
 	\fi
 	\ifx\@email\@empty
 %		\relax
 	\else
-		\textbf\@email\hfill
+		\textbf{\@email}
+		\dotfill
+		\dotfill
 	\fi
-	\par\noindent
 	\ifx\@github\@empty
-		\Vhrulefill
+%		\relax
 	\else
-		\Vhrulefill\textbf\@github\Vhrulefill
+		\textbf{\@github}
+		\dotfill
 	\fi
 	\newline
 }
