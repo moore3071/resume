@@ -1,26 +1,63 @@
-\documentclass[letterpaper,6pt]{cv}
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[letterpaper,10pt]{article}
+
+%Useful packages
+\usepackage[margin=.5in]{geometry}
+\usepackage{multicol}
+\usepackage{FiraSans}
+\usepackage{xhfill}
+
+%Document settings
+\pagenumbering{gobble}
+\setlength\parindent{0pt}
+
+%Commands for this document
+\newcommand{\topic}[1]{\vspace{2mm} \rule[.5em]{10mm}{.2pt} {\large \bfseries #1} \xrfill[.5em]{.2pt} \newline}
+%Used for entries, \fullentry{name}{location/position}{date}
+\newcommand{\fullentry}[3] { \parbox[t]{.6\textwidth}{\large \bfseries #1} \hfill \parbox[t]{.4\textwidth}{\bfseries \raggedleft #2 \\ #3} \newline}
+%Used to equispace contact info without losing centering
+\newcommand{\contact}[1]{\parbox{.2\textwidth}{\centering #1}}
 
 \begin{document}
-	\author{Brandon A. Moore}
-	\email{moore.3071@osu.edu}
-	\github{github.com/moore3071}
-	\address{PO Box 21161, Columbus OH 43221}
-	\maketitle
-	
-	\noindent\textbf{\Large{Objective:}} To find an internship where I can contribute in a meaningful way while learning from my peers.
+	%Header
+	\begin{center} \huge \bfseries
+		Brandon A. Moore
+	\end{center}
+	%Contact info should be separated with \hfills
+	\contact{moore.3071@osu.edu} \hfill \contact{github.com/moore3071} \hfill \contact{Postal Box 21161\\ Columbus OH 43221}
 
-	\section{education}
+	\xhrulefill{black}{2pt}
+	%End Header
 
-	\subsection{BS Computer Science and Engineering}{Ohio State University}{May 2017}
-			Bachelor's of Science in Computer Science and Engineering from the Ohio State University expected May 2017.
-			\begin{itemize}
-				\item Cumulative GPA of 3.48
-				\item Honors engineering program
-			\end{itemize}
+	\vspace{5mm}
 
-	\section{experience}
+	\noindent {\bfseries \Large Objective: } Find a position in which I can contribute to the software community in a positive manner
 
-	\subsection{Software intern at Bertec}{Columbus, Ohio}{Summer 2015-present}
+	\vspace{3mm}
+
+	\topic{EDUCATION}
+
+		\fullentry{BS Computer Science and Engineering}{Ohio State University}{May 2017}
+			Bachelor's of Science in Computer Science and Engineering from the Ohio State University expected May 2017. A cumulative GPA of 3.39. Topics of study include:
+			\begin{multicols}{4}
+				\begin{itemize}
+					\setlength\itemsep{.1mm}
+					\item Artificial intelligence
+					\item network topology
+					\item networking stacks
+					\item information security
+					\item software engineering
+					\item data types, algorithms
+					\item systems design
+					\item language design
+				\end{itemize}
+			\end{multicols}
+
+	\topic{EXPERIENCE}
+
+		\fullentry{Backend software engineer}{Indianapolis, Indiana}{Summer 2016}
+
+		\fullentry{Software intern at Bertec}{Columbus, Ohio}{June 2015-May 2016}
 			Summer internship focusing on the development of medical software in a small intensive team.
 			\begin{itemize}
 				\item Developed product from pre-alpha to production
@@ -28,38 +65,30 @@
 				\item Introduced testing to the new target
 			\end{itemize}
 	
-		\subsection{Intern at Franklin County Emergency\\ Management and Homeland Security}{Columbus, Ohio}{Summer 2014}
+		\fullentry{Intern at Franklin County Emergency\\ Management and Homeland Security}{Columbus, Ohio}{Summer 2014}
 			Summer internship focusing on the development of a flood detection system for Franklin County.
 			\begin{itemize}
 				\item Built a MySQL/PHP backend to automatically gather data on water levels
 				\item Laid a foundation for the updating of emergency management operations to a more computerized system
 			\end{itemize}
 
-	\section{activities}
+	\topic{ACTIVITIES}
 
-	\subsection{OpenSource Club\\ at the Ohio State University}{Librarian}{}
-			Weekly technical talks and news with a focus on open source technology including a focus on getting new members familiar with Linux and version control such as git.
+		\fullentry{OpenSource Club at\\ The Ohio State University}{President(2016-2017),}{Librarian(2015-2016)}
+				Weekly technical talks and news with a focus on open source technology including a focus on getting new members familiar with Linux and version control such as git.
 
-			\subsection{Collegiate Web Development Group}{member}{}
-			Focus on and acquistion of web development skills ranging from basics in the form of talks on source control, html, css, and javascript, to projects focusing on various platforms such as rails, node, and static generators such as middleman.
-
-			\subsection{Electronics Club\\ at the Ohio State University}{member}{}
-			A focus on understanding hobby electronics and the hardware-side of computer science.
-
-	\section{events}
-		\begin{itemize}
-			\item Cardinal Health hackathon
-			\item OHIO hackathon 2015\&2014
-			\item Makeathon at the Ohio State University
-			\item townhacks at the Ohio State University
-		\end{itemize}
-
-	\section{interests}
-		\begin{itemize}
-			\item Esoteric languages
-			\item Web development
-			\item Open Source Software
-			\item Workflow practices
-		\end{itemize}
+		\begin{multicols}{3} \bfseries \raggedright
+			\begin{itemize}
+				\item Collegiate Web Development Group 2014-2016
+				\item Electronics Club at OSU 2014-2016
+				\item Buckeye Hackers 2015-2016
+				\item Ohio LinuxFest 2016
+				\item PyOhio 2016
+				\item Cardinal Health hackathon 2014
+				\item OHI/O hackathon 2015,2014
+				\item Makeathon at OSU 2015
+				\item Townhack at OSU 2015
+			\end{itemize}
+		\end{multicols}
 		
 \end{document}
