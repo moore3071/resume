@@ -4,20 +4,24 @@
 %Useful packages
 \usepackage[margin=.5in]{geometry}
 \usepackage{multicol}
+\usepackage{enumitem}
 \usepackage{FiraSans}
 \usepackage{xhfill}
 \usepackage[fontsize=9pt]{scrextend}
+
+%enumitem decrease item seperation
+\setlist[1]{itemsep=-.1mm}
 
 %Document settings
 \pagenumbering{gobble}
 \setlength\parindent{0pt}
 
 %Commands for this document
-\newcommand{\topic}[1]{\vspace{2mm} \rule[.5em]{10mm}{.2pt} {\large \bfseries #1} \xrfill[.5em]{.2pt} \newline}
+\newcommand{\topic}[1]{\vspace{2mm} \rule[.5em]{10mm}{.2pt} {\large \bfseries #1} \xrfill[.5em]{.2pt} \newline \vspace{-2mm}}
 %Used for entries, \fullentry{name}{location/position}{date}
 \newcommand{\fullentry}[3] { \parbox[t]{.6\textwidth}{\large \bfseries #1} \hfill \parbox[t]{.4\textwidth}{\bfseries \raggedleft #2 \\ #3} \vspace{.5mm} \newline}
 %Used to equispace contact info without losing centering
-\newcommand{\contact}[1]{\parbox{.2\textwidth}{\centering #1}}
+\newcommand{\contact}[1]{\parbox{.18\textwidth}{\centering #1}}
 
 \begin{document}
 	%Header
@@ -25,66 +29,77 @@
 		Brandon A. Moore
 	\end{center}
 	%Contact info should be separated with \hfills
-	\contact{moore.3071@osu.edu} \hfill \contact{github.com/moore3071} \hfill \contact{PO Box 21161\\ Columbus OH 43221}
+	\contact{moore.3071@osu.edu} \hfill \contact{github.com/moore3071} \hfill \contact{PO Box 21161\\Columbus OH 43221} \hfill \contact{moore3071.github.io}
 
 	\xhrulefill{black}{2pt}
 	%End Header
 
 	\vspace{5mm}
 
-	\noindent {\bfseries \Large Objective: } Seeking a position which will allow me to contribute to the open-source community and a driven company while further educating myself.
+	\noindent {\bfseries \Large Objective: } Seeking a position which will allow me to use my education and experience to contribute to a company with a strong drive for using technology to help their users and employees.
 
 	\vspace{3mm}
 
 	\topic{EDUCATION}
 
-		\fullentry{BS Computer Science and Engineering}{Ohio State University}{May 2017}
-			Bachelor's of Science in Computer Science and Engineering from the Ohio State University expected May 2017. A cumulative GPA of 3.33. Topics of study include:
+		\fullentry{BS Computer Science and Engineering\\GPA 3.33}{Ohio State University}{May 2017}
+			\vspace{-7mm}
+			\begin{itemize}
+				\item Conceptualized and implemented a 400\% faster implementation of the Michael Collin's part of speech tagger
+				\item Utilized IBM's BlueMix service to build a flexible natural language simulation for hostage negotiation
+			\end{itemize}
 			\begin{multicols}{3}
 				\begin{itemize}
 					\setlength\itemsep{.1mm}
 					\item Artificial intelligence
-					\item network topology
-					\item networking stacks
-					\item information security
-					\item software engineering
-					\item data types, algorithms
-					\item systems design
 					\item Speech \& language processing
+					\item networking
+					\item information security
+					\item Cryptography
+					\item software engineering
+					\item data types and algorithms
+					\item systems design
 					\item Web App development
 				\end{itemize}
 			\end{multicols}
 
 	\topic{EXPERIENCE}
 
-		\fullentry{Intern at MoonShot/InSourceCode}{Indianapolis, Indiana}{Summer 2016}
-			Summer internship focusing on the maintainence of a number of high profile websites, and the creation of a usable backend service for a rapidly expanding catering service.
+		\fullentry{Software engineer at MoonShot/InSourceCode \\ Internship}{Indianapolis, Indiana}{Summer 2016}
+			Summer internship focusing on the maintenance of a number of high profile websites, and the creation of a usable backend service for a rapidly expanding catering service.
 			\begin{itemize}
-				\item Implemented designs for a prominent super PAC and hooked into third party APIs for analytics and donations
-				\item Analyzed potential speed problems related to third party ad-providers
-				\item Developed a concise database schema for catering management
+				\item Developed and pushed into production a superpac site in less than two weeks
+				\item Addressed speed problems related to third-party scripts that were actively leading to the loss of viewers
+				\item Led a team in developing a concise database schema for catering management
 			\end{itemize}
 
-		\fullentry{Software Intern at Bertec}{Columbus, Ohio}{June 2015-May 2016}
+		\fullentry{Software engineer at Bertec \\ Internship}{Columbus, Ohio}{June 2015-May 2016}
 			Summer internship focusing on the development of medical software in a small intensive team.
 			\begin{itemize}
-				\item Refactored code to decrease potential of software rot and simplify modifications
-				\item Introduced unit testing to the software
-				\item Documented and laid out a road map for improvements
+				\item Refactored code to decrease potential of software rot and provide a cleaner experience for future developers
+				\item Introduced unit testing to the software, and provided a road map for high coverage of legacy software
 			\end{itemize}
 	
 		\fullentry{Intern at Franklin County Emergency\\ Management and Homeland Security}{Columbus, Ohio}{Summer 2014}
 			Summer internship focusing on the development of a flood detection system for Franklin County.
 			\begin{itemize}
-				\item Implemented a LAMP server to act as a centralized data point for significant data
-				\item Web scraped otherwise inaccessible data on water levels in the Franklin County region
-				\item Laid a foundation for the updating of emergency management with the help of a GIS specialist
+				\item Provided a system for instantaneous notification to EMA personnel of flood conditions
+				\item Developed a maintainable database schema with a simple REST API for frontend access
+				\item Laid a foundation for the updating of emergency management with the help of staff
 			\end{itemize}
 
 	\topic{ACTIVITIES}
 
 		\fullentry{OpenSource Club at\\ The Ohio State University}{President(2016-2017),}{Librarian(2015-2016)}
-				Weekly technical talks and news with a focus on open source technology including a focus on getting new members familiar with Linux and version control such as git.
+		\vspace{-7mm}
+		\begin{itemize}
+			\item Presided over and organized weekly tech talks from members and speakers from the open source community
+			\item Built ties with likewise organizations across the nation
+			\item Contributed to the unification of extracurricular tech clubs through OHI/O
+			\item Documented information on the organization and its servers to facilitate easier officer transition
+		\end{itemize}
+
+		{\bf Other activities:}
 
 		\begin{multicols}{3} \raggedright
 			\begin{itemize}
